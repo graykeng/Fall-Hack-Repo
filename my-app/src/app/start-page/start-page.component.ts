@@ -16,8 +16,8 @@ export class StartPageComponent implements OnInit {
 
   }
 
-  userRegistration() {
-
+  getname(username) {
+    console.log(username);
 
   }
 
