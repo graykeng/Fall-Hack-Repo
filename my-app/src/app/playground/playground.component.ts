@@ -247,7 +247,7 @@ export class PlaygroundComponent implements OnInit {
       } else {
         this.gameOver = true
         this.timeLeft = 0;
-
+        clearInterval(this.interval)
       }
     },1000)
   }
