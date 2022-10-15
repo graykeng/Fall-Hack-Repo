@@ -1,0 +1,49 @@
+.titlecontainer {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+
+}
+
+.scoreboardcontainer {
+  display: flex;
+  flex-direction: column;
+}
+
+
+table {
+  border-collapse: collapse;
+  border: 1px solid black;
+  text-align: center;
+	vertical-align: middle;
+}
+
+// tr {
+//   border: 2px solid black;
+// }
+
+td {
+  padding: 30px;
+}
+
+thead th {
+  width: 25%;
+  background-color: #333;
+  color: white;
+}
+
+.cell-highlight {
+  background-color: gold;
+  font-weight: bold;
+}
+.cell-highlight2 {
+  background-color: rgb(199, 197, 197);
+  font-weight: bold;
+}
+.cell-highlight3 {
+  background-color: rgb(165, 135, 0);
+  font-weight: bold;
+}
+
+
+
