@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-start-page',
@@ -12,13 +13,20 @@ export class StartPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  name: string = "";
+  submitted = false;
+
+  nameForm = new FormGroup ({
+    username : new FormControl,
+  })
+
   startGame () {
-
-  }
-
-  getname(username) {
-    console.log(username);
-
+    // this.submitted = true;
+    // const uName = {
+    //   username: this.nameForm.value.username
+    // }
+    // console.log(event);
+    console.log(this.name);
   }
 
 }

@@ -2,11 +2,6 @@
 <html>
 <head>
 <style>
-    div {text-align: center;}
-    .center {
-  padding: 100px 0;
-  border: 2px solid #DEA000;
-}
 </style>
 
 
@@ -14,19 +9,18 @@
 <meta name="description" content="Our first page">
 <meta name="keywords" content="html tutorial template">
 </head>
-<body bgcolor=”#323437">
-<head style="color:white" > 
-    <p style=color:white style="font-family: JetBrains Mono">TYPATHON
-    </p>
+<body>
+<head style="color:white" >
+    <h1>TYPATHON</h1>
 </head>
     <div class="center">
-        <form action="/action_page.p©hp">
-            <label for="fname style="color:white;"> 
-                <p style="color:white;">hello, </p>
+        <form >
+            <label for="fname style=">
+                <p>hello, </p>
             </label>
-            <input type="text" id="fname" name="fname"><br><br>
-            <button type="submit" value="Submit" onclick="getname(username)" > test </button>
+            <input type="text" id="fname" name="fname" [(ngModel)]="name" placeholder="Enter Name"><br><br>
         </form>
+        <button (click)="startGame()">Start</button>
     </div>
 
 

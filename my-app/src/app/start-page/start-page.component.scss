@@ -1,4 +1,37 @@
+div {text-align: center;}
 .center {
-    border: 5px solid #FFFF00;
+    padding: 100px 0;
+    border: 2px solid #DEA000;
+}
+
+h1 {
+    font-size: 500%;
+    font-family: 'Courier new', monospace;
+    /* font-size: 100em; */
+    /* transform: scale(1, 1.5); */
+}
+
+.button {
+    background-color: #DEA000; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
     text-align: center;
-    }
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: #DEA000;
+    color: black;
+    border: 2px solid white;
+}
+
+.button1:hover {
+    background-color: #DEA000;
+    color: white;
+}
