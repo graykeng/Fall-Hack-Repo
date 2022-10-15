@@ -6,8 +6,12 @@
 
 <button (click)='startTimer()'>Start Timer</button>
 <button (click)='pauseTimer()'>Pause</button>
-<button (click)='addTimer()'>add</button>
-<button (click)='decreaseTimer()'>minus</button>
+<!-- <button (click)='addTimer()'>add</button> -->
+<!-- <button (click)='decreaseTimer()'>minus</button> -->
 
+<div *ngIf="begin">
+    <p>{{timeLeft}} Seconds Left....</p> 
 
-<p>{{timeLeft}} Seconds Left....</p> 
+    <h2> {{ quotes[index].quote }}</h2>
+    <input type="text" #box (keyup.enter)="onEnter(box.value)" [(ngModel)]="userInput">
+</div>
