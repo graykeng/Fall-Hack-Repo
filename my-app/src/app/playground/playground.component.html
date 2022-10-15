@@ -5,13 +5,20 @@
 </p>
 
 <button (click)='startTimer()'>Start Timer</button>
-<button (click)='pauseTimer()'>Pause</button>
+<!-- <button (click)='pauseTimer()'>Pause</button> -->
 <!-- <button (click)='addTimer()'>add</button> -->
 <!-- <button (click)='decreaseTimer()'>minus</button> -->
 
 <div *ngIf="begin">
     <p>{{timeLeft}} Seconds Left....</p> 
 
-    <h2> {{ quotes[index].quote }}</h2>
+    <h2 appBlockCopyPaste> {{ quotes[index].quote }}</h2>
     <input type="text" #box (keyup.enter)="onEnter(box.value)" [(ngModel)]="userInput">
+    <p *ngIf="submit && count>0">THERE ARE ERRORS !!! </p>
+    <p *ngIf="submit && count==0">Correct !!! </p>
+</div>
+
+
+<div *ngIf="gameOver">
+    <h1>Game Over</h1>
 </div>

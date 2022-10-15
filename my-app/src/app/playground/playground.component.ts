@@ -7,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlaygroundComponent implements OnInit {
 
-  timeLeft: number = 600;
+  timeLeft: number = 10;
   interval: any;
   begin: boolean = false;
+  gameOver : boolean = false;
   index = 0;
+  count = 0;
+  submit: boolean = false;
 
   quotes = [
   
@@ -232,10 +235,17 @@ export class PlaygroundComponent implements OnInit {
 
   startTimer() {
     this.begin = true;
+    this.gameOver = false;
+    this.timeLeft = 10;
+    this.submit = false;
+    this.userInput = "";
+    this.index += 1;
+
     this.interval = setInterval(() => {
       if(this.timeLeft > 0) {
         this.timeLeft--;
       } else {
+        this.gameOver = true
         this.timeLeft = 0;
 
       }
@@ -253,6 +263,7 @@ export class PlaygroundComponent implements OnInit {
   decreaseTimer(val: number){
     this.timeLeft = this.timeLeft - val;
     if(this.timeLeft <= 0){
+      this.gameOver = true
       console.log("Game Over!!!!!!!");
     }
   }
@@ -273,18 +284,18 @@ export class PlaygroundComponent implements OnInit {
   }
 
   compareDiff(){
-    let count = 0;
-      for (var j=0; j< this.quotes[this.index].quote.length; j++){
-        if(this.userInput[j] != this.quotes[this.index].quote[j]){
-          count += 1 
-        }
+    this.submit = true;
+    for (var j=0; j< this.quotes[this.index].quote.length; j++){
+      if(this.userInput[j] != this.quotes[this.index].quote[j]){
+        this.count += 1 
       }
+    }
     
-    console.log("Different Count: ", count);
-    if (count == 0){
+    console.log("Different Count: ", this.count);
+    if (this.count == 0){
       this.addTimer(20);
     }else{
-      this.decreaseTimer(count);
+      this.decreaseTimer(this.count);
     }
   }
   
