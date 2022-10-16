@@ -6,5 +6,5 @@ A timed typing game which gives players a fixed amount of time to type short sen
 MacOS
 
 ## install package
-`npm init`
-`npm install express`
+1. `npm init`
+2. `npm install express`
