@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 // import { StartPageComponent } from './start-page/start-page/start-page.component';
 import { ScoreBoardComponent } from './score-board/score-board.component';
+import { StartPageComponent } from './start-page/start-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ScoreBoardComponent
+    ScoreBoardComponent,
+    StartPageComponent
   ],
   imports: [
     BrowserModule,

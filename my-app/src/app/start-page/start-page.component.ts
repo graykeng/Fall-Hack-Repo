@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { username } from '../service/username.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-start-page',
@@ -8,7 +10,10 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class StartPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private username: username,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
@@ -27,6 +32,9 @@ export class StartPageComponent implements OnInit {
     // }
     // console.log(event);
     console.log(this.name);
+    this.username.username = this.name;
+    this.router.navigate(['/playground'])
+
   }
 
 }

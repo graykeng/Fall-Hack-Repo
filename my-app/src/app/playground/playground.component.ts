@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { username } from '../service/username.service';
 
 @Component({
   selector: 'app-playground',
@@ -13,7 +14,7 @@ export class PlaygroundComponent implements OnInit {
   index = 0;
 
   quotes = [
-  
+
   {
          "quote":"Life isn’t about getting and having, it’s about giving and being.","author":"Kevin Kruse"},
   {
@@ -219,15 +220,15 @@ export class PlaygroundComponent implements OnInit {
   {
          "quote":"If you can dream it, you can achieve it.","author":"Zig Ziglar"}
   ]
-  
-  userInput: string = ''
-  
 
-  
-  constructor(  ) { }
+  userInput: string = ''
+
+
+
+  constructor( private username: username ) { }
 
   ngOnInit(): void {
-    
+    console.log(this.username);
   }
 
   startTimer() {
@@ -254,6 +255,7 @@ export class PlaygroundComponent implements OnInit {
     this.timeLeft = this.timeLeft - val;
     if(this.timeLeft <= 0){
       console.log("Game Over!!!!!!!");
+      console.log(this.username);
     }
   }
 
@@ -269,17 +271,17 @@ export class PlaygroundComponent implements OnInit {
       }
 
     }
-    
+
   }
 
   compareDiff(){
     let count = 0;
       for (var j=0; j< this.quotes[this.index].quote.length; j++){
         if(this.userInput[j] != this.quotes[this.index].quote[j]){
-          count += 1 
+          count += 1
         }
       }
-    
+
     console.log("Different Count: ", count);
     if (count == 0){
       this.addTimer(20);
@@ -287,5 +289,5 @@ export class PlaygroundComponent implements OnInit {
       this.decreaseTimer(count);
     }
   }
-  
+
 }
