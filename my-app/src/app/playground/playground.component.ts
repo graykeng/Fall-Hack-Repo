@@ -7,13 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlaygroundComponent implements OnInit {
 
-  timeLeft: number = 10;
+  timeLeft: number =20;
   interval: any;
   begin: boolean = false;
   gameOver : boolean = false;
   index = 0;
   count = 0;
   submit: boolean = false;
+  score: number = 0;
 
   quotes = [
   
@@ -236,10 +237,11 @@ export class PlaygroundComponent implements OnInit {
   startTimer() {
     this.begin = true;
     this.gameOver = false;
-    this.timeLeft = 10;
+    this.timeLeft =20;
     this.submit = false;
     this.userInput = "";
     this.index += 1;
+    this.score = 0;
 
     this.interval = setInterval(() => {
       if(this.timeLeft > 0) {
@@ -257,6 +259,7 @@ export class PlaygroundComponent implements OnInit {
   }
 
   addTimer(val: number){
+       this.score += 15;
     this.timeLeft = this.timeLeft + val;
   }
 
@@ -287,15 +290,16 @@ export class PlaygroundComponent implements OnInit {
     this.submit = true;
     for (var j=0; j< this.quotes[this.index].quote.length; j++){
       if(this.userInput[j] != this.quotes[this.index].quote[j]){
-        this.count += 1 
+        this.count += 1 ;
       }
     }
     
     console.log("Different Count: ", this.count);
     if (this.count == 0){
-      this.addTimer(20);
+      this.addTimer(15);
     }else{
-      this.decreaseTimer(this.count);
+//       this.decreaseTimer(this.count);
+       this.decreaseTimer(1);
     }
   }
   
