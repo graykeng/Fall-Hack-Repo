@@ -1,3 +1,13 @@
-# Fall-Hack-Repo
+# Typathon
 ## Project description:
 A timed typing game which gives players a fixed amount of time to type short sentences. As players clear through each sentence, additional time is awarded. The next level would have slightly longer sentences, and then the player has to try to type that as well before time runs out. 
+
+## OS
+MacOS
+
+## install package
+1. `npm init`
+2. `npm install express`
+
+## Run the application
+`ng serve`
