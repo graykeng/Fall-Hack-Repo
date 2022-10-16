@@ -108,7 +108,11 @@
 <<<<<<< HEAD
     "analytics": false
 =======
+<<<<<<< HEAD
+    "analytics": false
+=======
     "analytics": "968eef18-a625-4845-820e-c2e6acbb651f"
 >>>>>>> 9f7db4a362f11321e2f2b57996e63955eb727a1d
+>>>>>>> main
   }
 }
